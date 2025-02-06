@@ -1,11 +1,12 @@
 name: Daily and Manual Commit Workflow
 
 on:
-  # Schedule to run daily at 12:00 PM UTC
   schedule:
-    - cron: '0 12 * * *'
-  # Enable manual triggering from the Actions tab
-  workflow_dispatch:
+    - cron: '0 12 * * *' # Runs daily at 12:00 PM UTC
+  workflow_dispatch: # Allows manual triggering
+
+permissions:
+  contents: write # Explicitly grant write access to repository contents
 
 jobs:
   daily-commit:
